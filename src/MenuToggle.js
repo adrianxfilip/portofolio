@@ -9,27 +9,56 @@ import {
 import { useEffect, useState } from "react";
 import "./App.scss";
 function MenuToggle() {
-  const topPaths = ["M10 10 L40 10", "M10 10 L40 30"];
 
-  const [pathIndex, setPathIndex] = useState(0);
+  const [isMenuOpen, toggleMenu] = useState(false);
+
+  const menuVariants = {
+    open: {
+      d: [
+        "M10 10 L40 10 M10 20 L40 20 M10 30 L40 30",
+        "M10 10 L40 10 M10 20 L10 20 M10 30 L40 30",
+        "M15 10 L35 30 M10 20 L10 20 M15 30 L35 10"
+      ]
+    },
+    closed: {
+      d: [
+        "M15 10 L35 30 M10 20 L10 20 M15 30 L35 10",
+        "M10 10 L40 10 M10 20 L10 20 M10 30 L40 30",
+        "M10 10 L40 10 M10 20 L40 20 M10 30 L40 30"
+      ]
+    }
+  }
+
+  const menuControls = useAnimation()
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      menuControls.start("open")
+    } else {
+      menuControls.start("closed")
+    }
+  })
 
   return (
     <div className="MenuTogglePage">
-      <button className="menu-button">
+      <button className="menu-button" onClick={() => { toggleMenu(!isMenuOpen) }}>
         <svg
           width="50px"
           height="50px"
-          onClick={() => {
-            pathIndex === 0 ? setPathIndex(1) : setPathIndex(0);
-          }}
         >
           <motion.path
-            d={topPaths[pathIndex]}
+            d="M10 10 L40 10 M10 20 L40 20 M10 30 L40 30"
             stroke="rgb(0, 255, 68)"
-            strokeWidth={4}
-            animate
+            strokeWidth={2}
+            variants={menuVariants}
+            animate={menuControls}
+            initial="closed"
+            transition={{
+              duration: 0.3,
+              times: [0, 0.5],
+              ease: "easeInOut"
+            }}
           />
-          <path d="M10 30 L40 30" stroke="rgb(0, 255, 68)" strokeWidth={4} />
         </svg>
       </button>
     </div>
