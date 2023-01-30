@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import ShopButton from "./ShopButton";
 import MenuToggle from "./MenuToggle";
+import PageIntro from "./PageIntro";
 
 function App() {
   return (
    <motion.div className="App">
-      <MenuToggle>
-
-      </MenuToggle>
+      <PageIntro></PageIntro>
    </motion.div>
   );
 }

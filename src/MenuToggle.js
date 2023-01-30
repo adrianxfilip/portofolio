@@ -54,8 +54,8 @@ function MenuToggle() {
             animate={menuControls}
             initial="closed"
             transition={{
-              duration: 0.3,
-              times: [0, 0.5],
+              duration: 0.2,
+              times: [0, 0.3],
               ease: "easeInOut"
             }}
           />
