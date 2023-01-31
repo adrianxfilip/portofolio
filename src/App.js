@@ -1,15 +1,13 @@
-import { click } from "@testing-library/user-event/dist/click";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion} from "framer-motion";
 import "./App.scss";
-import ShopButton from "./ShopButton";
-import MenuToggle from "./MenuToggle";
-import PageIntro from "./PageIntro";
+import Menu from "./Components/Menu";
+import Logo from "./Components/Logo";
 
 function App() {
   return (
    <motion.div className="App">
-      <PageIntro></PageIntro>
+      <Logo></Logo>
+      <Menu></Menu>
    </motion.div>
   );
 }
