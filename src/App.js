@@ -1,13 +1,11 @@
 import { motion} from "framer-motion";
 import "./App.scss";
-import Menu from "./Components/Menu";
-import Logo from "./Components/Logo";
+import Header from "./Components/Header";
 
 function App() {
   return (
    <motion.div className="App">
-      <Logo></Logo>
-      <Menu></Menu>
+        <Header></Header>
    </motion.div>
   );
 }
