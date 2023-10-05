@@ -49,7 +49,7 @@ function Menu() {
 
   const bottomVariants = {
     open: {
-      y: "-.4em",
+      y: "-.36em",
       rotate: "-45deg",
       backgroundColor: "#e0d3ff",
       width: "60%",
