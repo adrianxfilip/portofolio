@@ -1,12 +1,12 @@
 import { motion} from "framer-motion";
 import "../Styles/Header.scss"
 import Menu from "./Menu";
-import Logo from "./Logo";
+import logo from "../logo.png";
 
 function Header() {
   return (
    <motion.header className="header">
-      <Logo></Logo>
+      <img src={logo} /> 
       <Menu></Menu>
    </motion.header>
   );
