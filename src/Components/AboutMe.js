@@ -34,25 +34,42 @@ export default function AboutMe() {
     },
   };
 
-  const controls = useAnimation();
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
+  const controls3 = useAnimation();
 
-  const [ref, inView] = useInView({
-    threshold: 0.5,
+  const [ref1, inView1] = useInView({
+    threshold: 0.3,
+  });
+
+  const [ref2, inView2] = useInView({
+    threshold: 0.3,
+  });
+
+  const [ref3, inView3] = useInView({
+    threshold: 0.3,
   });
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
+    if (inView1) {
+      controls1.start("visible");
     }
-  }, [ref, inView]);
+    if (inView2) {
+      controls2.start("visible");
+    }
+    if (inView3) {
+      controls3.start("visible");
+    }
+  }, [ref1, ref2, ref3, inView1, inView2, inView3]);
 
   return (
-    <section className="about-me" ref={ref}>
+    <section className="about-me">
       <motion.div
         className="section-intro-wrapper"
-        animate={controls}
+        animate={controls1}
         variants={popupVariants}
         initial="hidden"
+        ref={ref1}
       >
         <h1 className="section-title">About me.</h1>
         <hr />
@@ -61,9 +78,10 @@ export default function AboutMe() {
       <div className="container">
         <motion.div
           className="wrapper"
-          animate={controls}
+          animate={controls2}
           variants={popupVariants}
           initial="hidden"
+          ref={ref2}
         >
           <h2>Who am I?</h2>
           <p>
@@ -85,9 +103,10 @@ export default function AboutMe() {
         </motion.div>
         <motion.div
           className="wrapper skills-wrapper"
-          animate={controls}
+          animate={controls3}
           variants={popupVariants}
           initial="hidden"
+          ref={ref3}
         >
           <h2>My Skills.</h2>
           {skills.map((skill, index) => (
