@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import "./App.scss";
 import Header from "./Components/Header";
-import Logo from "./Components/Logo";
 import Landing from "./Components/Landing";
+import AboutMe from "./Components/AboutMe";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     }, 3000);
   }, []);
 
-  return isLoaded ? (
+  return (
     <AnimatePresence>
       <motion.div
         className="App"
@@ -23,15 +23,10 @@ function App() {
         transition={{ duration: 0.2 }}
       >
         <Header></Header>
-        <Landing></Landing>
+        <Landing isLoaded={true}></Landing>
+        <AboutMe></AboutMe>
       </motion.div>
     </AnimatePresence>
-  ) : (
-    <motion.div className="App pre-loaded">
-      <div className="logo-container">
-        <Logo></Logo>
-      </div>
-    </motion.div>
   );
 }
 export default App;

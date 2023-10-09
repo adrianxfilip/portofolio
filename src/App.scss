@@ -13,12 +13,36 @@
     justify-content: center;
 }
 
-.pre-loaded{
-    padding: 0 !important;
-}
-
 button{
     cursor: pointer;
 }
 
+.section-intro-wrapper{
+    h1{
+        color: white;
+        font-family: "Gabarito", sans-serif;
+        text-align: center;
+        font-weight: 700;
+        font-size: 3em;
+        text-transform: capitalize;
+        margin: 0;
+    }
+    hr{
+        width: 3em;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+    p{
+        font-family: "Poppins", sans-serif;
+        color: white;
+        text-align: center;
+        margin: 0   ;
+    }
+}
 
+@media only screen and (max-width: 750px) {
+    .section-intro-wrapper{
+        font-size: 12px;
+    }
+}
+  

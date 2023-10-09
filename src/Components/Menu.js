@@ -8,7 +8,7 @@ function Menu() {
   const topVariants = {
     open: {
       y: ".6em",
-      backgroundColor: "#e0d3ff",
+      backgroundColor: "#060143",
       rotate: "45deg",
       width: "60%",
       height: ".15em",
@@ -28,7 +28,7 @@ function Menu() {
     closed: {
       y: "0",
       rotate: "0deg",
-      backgroundColor: "#e0d3ff",
+      backgroundColor: "#e7c3ff",
       width: "100%",
       height: ".2em",
       transition: {
@@ -51,7 +51,7 @@ function Menu() {
     open: {
       y: "-.36em",
       rotate: "-45deg",
-      backgroundColor: "#e0d3ff",
+      backgroundColor: "#060143",
       width: "60%",
       height: ".15em",
       transition: {
@@ -70,7 +70,7 @@ function Menu() {
     closed: {
       y: "0",
       rotate: "0deg",
-      backgroundColor: "#e0d3ff",
+      backgroundColor: "#e7c3ff",
       width: "100%",
       height: ".2em",
       transition: {
@@ -143,6 +143,7 @@ function Menu() {
       </button>
       <motion.nav
         className="menu-wrapper"
+        style={{zIndex : 4}}
         variants={menuVariants}
         animate={menuControls}
         initial="closed"

@@ -3,7 +3,8 @@ import "../Styles/Logo.scss";
 
 function Logo() {
   return (
-    <motion.div initial={{opacity: 1}} animate={{opacity: 0}} transition={{delay : 2, duration: .5}} className="Logo">
+    <div className="logo-wrapper">
+          <motion.div initial={{opacity: 1}} animate={{opacity: 0}} transition={{delay : 2, duration: .5}} className="Logo">
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +77,7 @@ c216 16 593 83 795 142 l57 16 0 490 c0 385 -3 489 -12 488 -7 -1 -47 -15 -88
         </g>
       </svg>
     </motion.div>
+    </div>
   );
 }
 
