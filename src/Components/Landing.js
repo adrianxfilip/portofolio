@@ -44,33 +44,29 @@ export default function Landing({ isLoaded }) {
         </p>
         <motion.div className="wrapper">
           <AnimatePresence mode="wait">
-            {renderText ? (
-              <motion.div
-                initial={{
-                  y: "100px",
-                  opacity: 0,
-                }}
-                animate={{
-                  y: "0",
-                  opacity: 1,
-                  transition: { duration: 0.3, type: "spring" },
-                }}
-                exit={{
-                  y: "-20px",
-                  opacity : 0,
-                  transition: {
-                    duration: .4,
-                    type: "spring",
-                  },
-                }}
-                key={textNumber}
-              >
-                <p>{texts[textNumber][0]}</p>
-                <img src={texts[textNumber][1]} />
-              </motion.div>
-            ) : (
-              <></>
-            )}
+            <motion.div
+              initial={{
+                y: "100px",
+                opacity: 0,
+              }}
+              animate={{
+                y: "0",
+                opacity: 1,
+                transition: { duration: 0.3, type: "spring" },
+              }}
+              exit={{
+                y: "-20px",
+                opacity: 0,
+                transition: {
+                  duration: 0.4,
+                  type: "spring",
+                },
+              }}
+              key={textNumber}
+            >
+              <p>{texts[textNumber][0]}</p>
+              <img src={texts[textNumber][1]} />
+            </motion.div>
           </AnimatePresence>
         </motion.div>
       </motion.div>

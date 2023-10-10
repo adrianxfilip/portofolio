@@ -1,13 +1,14 @@
 .landing{
     width: 100%;
     height: 100vh;
-    background-image: url("../bg3.jpg");
+    background-image: url("../bg-landing.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: #060143;
     display: flex;
     box-sizing: border-box;
-    padding: 12% 10em 0 15em;
+    padding: 0 15em;
+    align-items: center;
     .text-container{
         width: 100%;
     }
@@ -37,8 +38,8 @@
 @media only screen and (max-width: 1300px) {
     .landing{
         background-size: cover;
-        background-image: url("../bg-mobile.jpg");
-        padding: 30% 3em 0 3em;
+        background-image: url("../bg-landing-mobile.jpg");
+        padding: 0 3em 0 3em;
         p{
             font-size: 3.5em;
         }
@@ -47,7 +48,7 @@
 
 @media only screen and (max-width: 750px) {
     .landing{
-        padding: 50% 2em 0 2em;
+        padding: 0 2em;
         p{
             font-size: 2.2em;
             text-align: center;

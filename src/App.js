@@ -1,9 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
 import "./App.scss";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Header from "./Components/Header";
 import Landing from "./Components/Landing";
 import AboutMe from "./Components/AboutMe";
-import { useEffect, useState } from "react";
+import Portofolio from "./Components/Portofolio";
 
 function App() {
   const [isLoaded, setLoaded] = useState(false);
@@ -25,6 +26,7 @@ function App() {
         <Header></Header>
         <Landing isLoaded={true}></Landing>
         <AboutMe></AboutMe>
+        <Portofolio></Portofolio>
       </motion.div>
     </AnimatePresence>
   );
