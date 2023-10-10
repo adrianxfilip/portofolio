@@ -11,12 +11,13 @@
     align-items: center;
     .text-container{
         width: 100%;
+        margin-top: -15em;
     }
     .wrapper{
         width: 100%;
         position: relative;
         div{
-            position: relative;
+            position: absolute;
             img{
                 width: 150px;
             }
@@ -54,6 +55,8 @@
             text-align: center;
         }
         .wrapper{
+            display: flex;
+            justify-content: center;
             div{
                 img{
                     display: block;

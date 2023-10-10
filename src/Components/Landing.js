@@ -1,5 +1,5 @@
 import "../Styles/Landing.scss";
-import { AnimatePresence, motion, stagger } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import winkingFace from "../winking-face_1f609.png";
 import robot from "../robot_1f916.png";
 import beamingFace from "../beaming-face-with-smiling-eyes_1f601.png";
