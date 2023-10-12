@@ -31,6 +31,19 @@ export default function CV() {
     }
   }, [ref1, inView1]);
 
+  const glowVariants = {
+    noGlow: {
+      color: "white",
+      boxShadow: "0px 0px 0px 0px rgba(255,221,0,0.72)",
+    },
+    glow: {
+      color: "white",
+      boxShadow: "0px 0px 117px 52px rgba(255,221,0,0.72)",
+    },
+  };
+
+  const glowControls = useAnimation();
+
   return (
     <motion.section
       animate={controls1}
@@ -44,11 +57,22 @@ export default function CV() {
         <hr />
         <p className="section-title">Read my résumé for more in-depth info.</p>
       </div>
-      <div className="resume-button-wrapper">
-        <motion.button initial={{color : "white"}} whileHover={{color : "#FFD700"}}>
-          <i className="fi fi-rs-book-spells"></i>
-        </motion.button>
-      </div>
+      <motion.button
+        onMouseEnter={() => {
+          glowControls.start("glow");
+        }}
+        onMouseLeave={() => {
+          glowControls.start("noGlow");
+        }}
+      >
+        <i className="fi fi-rs-book-spells"></i>
+        <motion.div
+          className="glow-generator"
+          variants={glowVariants}
+          initial={"noGlow"}
+          animate={glowControls}
+        ></motion.div>
+      </motion.button>
     </motion.section>
   );
 }
