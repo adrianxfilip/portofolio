@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import Landing from "./Components/Landing";
 import AboutMe from "./Components/AboutMe";
 import Portofolio from "./Components/Portofolio";
-import CV from "./Components/CV";
+import Resume from "./Components/Resume";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
         <Header></Header>
         <Landing isLoaded={true}></Landing>
         <AboutMe></AboutMe>
+        <Resume></Resume>
         <Portofolio></Portofolio>
-        <CV></CV>
         <Footer></Footer>
       </motion.div>
     </AnimatePresence>

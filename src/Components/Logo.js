@@ -4,7 +4,7 @@ import "../Styles/Logo.scss";
 function Logo() {
   return (
     <div className="logo-wrapper">
-          <motion.div initial={{opacity: 1}} animate={{opacity: 0}} transition={{delay : 2, duration: .5}} className="Logo">
+      <motion.div className="logo">
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ function Logo() {
 -1 -908 1 -908 4 0 46 76 270 156 458 251 591 700 1104 1259 1436 132 78 368
 197 398 199 4 1 6 -470 5 -1046z"
             fill="rgba(0, 0, 0, 0)"
-            stroke="#e0d3ff "
+            stroke="white "
             strokeWidth={200}
             initial={{
               pathLength: 0
@@ -46,8 +46,9 @@ c-1 576 0 1047 3 1047 4 0 59 -24 124 -53 378 -171 766 -468 1057 -808 l77
 -44 35 -97 77 -117 93 -47 39 -266 188 -352 240 -217 132 -580 297 -841 382
 -116 38 -383 103 -507 123 -151 26 -389 56 -441 56 l-48 0 0 -3030z"
             fill="transparent"
-            stroke="#e0d3ff"
+            stroke="white"
             strokeWidth={200}
+            
             initial={{
               pathLength: 0
             }}
@@ -62,7 +63,9 @@ c-1 576 0 1047 3 1047 4 0 59 -24 124 -53 378 -171 766 -468 1057 -808 l77
             d="M5270 1318 c-201 -81 -635 -178 -797 -178 l-43 0 0 -466 0 -467 88 6
 c216 16 593 83 795 142 l57 16 0 490 c0 385 -3 489 -12 488 -7 -1 -47 -15 -88
 -31z"
-            fill="#e0d3ff"
+            fill="white"
+            stroke="white"
+            strokeWidth={200}
             initial={{
               opacity : 0
             }}

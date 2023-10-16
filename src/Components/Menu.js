@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import "../Styles/Menu.scss";
 
-function Menu() {
+function Menu({scrolled}) {
   const [isMenuOpen, toggleMenu] = useState(false);
 
   const topVariants = {
@@ -10,8 +10,6 @@ function Menu() {
       y: ".6em",
       backgroundColor: "#060143",
       rotate: "45deg",
-      width: "60%",
-      height: ".15em",
       transition: {
         y: {
           duration: 0.2,
@@ -28,9 +26,7 @@ function Menu() {
     closed: {
       y: "0",
       rotate: "0deg",
-      backgroundColor: "#e7c3ff",
-      width: "100%",
-      height: ".2em",
+      backgroundColor: "white",
       transition: {
         y: {
           delay: 0.2,
@@ -49,11 +45,9 @@ function Menu() {
 
   const bottomVariants = {
     open: {
-      y: "-.36em",
+      y: "-.38em",
       rotate: "-45deg",
       backgroundColor: "#060143",
-      width: "60%",
-      height: ".15em",
       transition: {
         y: {
           duration: 0.2,
@@ -70,9 +64,7 @@ function Menu() {
     closed: {
       y: "0",
       rotate: "0deg",
-      backgroundColor: "#e7c3ff",
-      width: "100%",
-      height: ".2em",
+      backgroundColor: "white",
       transition: {
         y: {
           delay: 0.2,
@@ -119,7 +111,7 @@ function Menu() {
   }, [isMenuOpen]);
 
   return (
-    <div className="menu-container">
+    <div className={scrolled ? "menu-container scrolled-menu" : "menu-container"}>
       <button
         className="menu-button"
         onClick={() => {
@@ -151,18 +143,18 @@ function Menu() {
         <ul>
           <li>
             <a href="">
-              <i className="fi fi-rr-following"></i> About Me
+            <i class="fi fi-br-following"></i> About Me
             </a>
           </li>
           <li>
             <a href="">
               {" "}
-              <i className="fi fi-rr-briefcase"></i> My Work
+              <i className="fi fi-br-briefcase"></i> My Work
             </a>
           </li>
           <li>
             <a href="">
-              <i className="fi fi-rr-document"></i> Résumé
+              <i className="fi fi-br-document"></i> Résumé
             </a>
           </li>
         </ul>
@@ -170,7 +162,7 @@ function Menu() {
         <ul>
           <li>
             <a href="mailto:adrianxfilip@gmail.com">
-              <i className="fi fi-sr-at"></i> adrianxfilip@gmail.com
+              <i className="fi fi-br-at"></i> adrianxfilip@gmail.com
             </a>
           </li>
           <li>

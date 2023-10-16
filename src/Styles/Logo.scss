@@ -1,12 +1,27 @@
-.logo-wrapper{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo-wrapper {
+  font-size: 16px;
+  .logo {
+    display: block;
+    font-size: 1em;
+    margin: 3em 0;
+    transition: all 0.3s;
+  }
 }
 
-.Logo{
-    display: block;
-    font-size: 50px;
+@media only screen and (max-width: 1400px) {
+  .logo-wrapper {
+    font-size: 14px;
+    .logo {
+      margin: 2.5em 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo-wrapper {
+    .logo {
+      font-size: 12px;
+      margin: 2em 0;
+    }
+  }
 }

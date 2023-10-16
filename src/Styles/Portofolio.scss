@@ -1,14 +1,5 @@
 .portofolio{
     padding: 2em 0;
     overflow: hidden;
-    background-image: url("../bg-portofolio.jpg");
-    background-size: 100% 100%;
     min-height: 70vh;
 }
-
-@media only screen and (max-width: 750px) {
-    .portofolio{
-        background-image: url("../bg-portofolio-mobile.jpg");
-    }
-}
-  

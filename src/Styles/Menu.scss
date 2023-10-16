@@ -1,19 +1,23 @@
 .menu-container {
   position: relative;
+  height: 2.8em;
+  width: 2.8em;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  transition: all .3s;
   .menu-button {
     border: none;
     background-color: transparent;
-    padding: 0;
     margin: 0;
     position: absolute;
     right: 0;
     z-index: 5;
-    width: 2.5em;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -1em;
     hr {
       border: none;
       float: left;
@@ -21,6 +25,7 @@
       margin: 0.4em 0;
       display: block;
       width: 100%;
+      height: .2em;
     }
   }
   .menu-wrapper {
@@ -35,8 +40,7 @@
     border-radius: 10px;
   }
   nav {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-family: "Gabarito", sans-serif;
     font-size: 0.9em;
     letter-spacing: 1px;
     p {
@@ -54,7 +58,7 @@
         display: inline-block;
         text-decoration: none;
         color: #060143;
-        font-weight: 400;
+        font-weight: 600;
         transition: all;
         transition-duration: 0.1s;
         .fi {
@@ -70,12 +74,13 @@
   }
   p {
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.7em;
     margin: 1em 0 0.5em 0;
+    letter-spacing: 1px;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   .menu-container {
     .menu-wrapper {
       padding: 6em 2em 5em;
@@ -85,7 +90,7 @@
       right: 0;
       top: 0;
       border-radius: 0px;
-      transform-origin: 50% 0;
+      transform-origin:50% 50%;
     }
     nav{
       p{
@@ -99,4 +104,5 @@
       }
     }
   }
+
 }

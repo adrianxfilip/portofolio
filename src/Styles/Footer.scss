@@ -1,42 +1,81 @@
-.footer{
-    height: 30vh;
-    background-image: url("../footer-bg.png");
-    background-size: 100% 100%;
-    display: flex;
-    align-items: flex-end;
-    padding: 1em 1em;
-    box-sizing: border-box;
-    p,a{
-        color: white;
-        text-decoration: none;
+.footer {
+  background-color: #e7c3ff;
+  box-sizing: border-box;
+  padding: 2em 0;
+  .container {
+    width: 65%;
+    margin: 0 auto;
+    p,
+    a {
+      color: #060143;
+      text-decoration: none;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .credits {
+      p {
+        font-family: "Poppins", sans-serif;
         margin: 0;
+        a {
+          font-weight: bold;
+        }
+      }
+      p:first-child {
         font-family: "Gabarito", sans-serif;
-        font-size: 1    em;
+        font-size: 1.5em;
+        margin: 0.5em 0;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
     }
-    .credits{
-        a{
-            font-weight: 500;
+    .contact {
+      float: right;
+      p {
+        font-family: "Gabarito", sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 1.5em;
+        text-align: right;
+        margin: 0.5em 0;
+      }
+      a:nth-child(3) {
+        img {
+          margin: 0;
         }
+      }
+      a {
+        img {
+          width: 1.75em;
+          border-radius: 0.3em;
+          display: inline-block;
+          float: right;
+          margin: 0 0 0 0.5em;
+        }
+      }
     }
-    .contact{
-        .fi{
-            font-size: 1.6em;
-            margin: 0 0 0 .4em;
-        }
-        p{
-            font-family: "Gabarito", sans-serif;
-            margin: 0 0 .5em 0;
-            font-size: 1.5em;
-            text-align: right;
-        }
-        div{
-            display: flex;
-            justify-content: flex-end;
-        }
+    hr {
+      border: 1px solid #060143;
+      margin: 2em 0;
     }
-    .copyright{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    .copyright {
+      font-family: "Gabarito", sans-serif;
+      display: block;
+      text-align: center;
+      font-size: 0.9em;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+    .footer{
+        font-size: 14px;
+        padding: 2em;
+        .container{
+            width: 100%;
+        }
     }
 }
+  
