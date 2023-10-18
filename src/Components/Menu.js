@@ -132,8 +132,14 @@ function Menu() {
   useEffect(() => {
     if (isMenuOpen) {
       menuControls.start("open");
+      if(isMobile){
+        document.body.style.overflow = "hidden"
+      }
     } else {
       menuControls.start("closed");
+      if(document.body.style.overflow == "hidden"){
+        document.body.style.overflow = "unset"
+      }
     }
   }, [isMenuOpen, isMobile]);
 

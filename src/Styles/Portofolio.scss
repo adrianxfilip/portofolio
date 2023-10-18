@@ -1,5 +1,6 @@
 .portofolio{
     padding: 2em 0;
-    overflow: hidden;
-    min-height: 70vh;
+    .container{
+        width: 65%;
+    }
 }

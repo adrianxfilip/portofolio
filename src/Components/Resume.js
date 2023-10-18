@@ -1,7 +1,5 @@
 import "../Styles/Resume.scss";
-import { useAnimation, motion } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 export default function Resume() {
   const popupVariants = {
@@ -18,26 +16,14 @@ export default function Resume() {
     },
   };
 
-  const controls1 = useAnimation();
-
-  const [ref1, inView1] = useInView({
-    threshold: 0.3,
-  });
-
-  useEffect(() => {
-    if (inView1) {
-      controls1.start("visible");
-    }
-  }, [ref1, inView1, controls1]);
-
   return (
     <motion.section className="resume">
       <motion.div className="resume-wrapper">
         <motion.div
-          animate={controls1}
           variants={popupVariants}
           initial="hidden"
-          ref={ref1}
+          whileInView={"visible"}
+          viewport={{once : true}}
         >
           <p className="section-title">
             Read my résumé for more in-depth info.

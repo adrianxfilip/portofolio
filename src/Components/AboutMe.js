@@ -1,7 +1,5 @@
 import "../Styles/AboutMe.scss";
-import { useAnimation, motion } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
   const skills = [
@@ -34,42 +32,15 @@ export default function AboutMe() {
     },
   };
 
-  const controls1 = useAnimation();
-  const controls2 = useAnimation();
-  const controls3 = useAnimation();
-
-  const [ref1, inView1] = useInView({
-    threshold: 0.3,
-  });
-
-  const [ref2, inView2] = useInView({
-    threshold: 0.3,
-  });
-
-  const [ref3, inView3] = useInView({
-    threshold: 0.3,
-  });
-
-  useEffect(() => {
-    if (inView1) {
-      controls1.start("visible");
-    }
-    if (inView2) {
-      controls2.start("visible");
-    }
-    if (inView3) {
-      controls3.start("visible");
-    }
-  }, [ref1, ref2, ref3, inView1, inView2, inView3]);
 
   return (
     <section className="about-me">
       <motion.div
         className="section-intro-wrapper"
-        animate={controls1}
         variants={popupVariants}
         initial="hidden"
-        ref={ref1}
+        whileInView={"visible"}
+        viewport={{once : true}}
       >
         <h1 className="section-title">About me.</h1>
         <hr />
@@ -78,10 +49,10 @@ export default function AboutMe() {
       <div className="container">
         <motion.div
           className="wrapper"
-          animate={controls2}
           variants={popupVariants}
           initial="hidden"
-          ref={ref2}
+          whileInView={"visible"}
+          viewport={{once : true}}
         >
           <h2>Who am I?</h2>
           <p>
@@ -103,10 +74,10 @@ export default function AboutMe() {
         </motion.div>
         <motion.div
           className="wrapper skills-wrapper"
-          animate={controls3}
           variants={popupVariants}
           initial="hidden"
-          ref={ref3}
+          whileInView={"visible"}
+          viewport={{once : true}}
         >
           <h2>My Skills.</h2>
           {skills.map((skill, index) => (

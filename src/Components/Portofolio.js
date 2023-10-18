@@ -1,7 +1,6 @@
 import "../Styles/Portofolio.scss";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 
 export default function Portofolio() {
   const popupVariants = {
@@ -18,46 +17,58 @@ export default function Portofolio() {
     },
   };
 
-  const controls1 = useAnimation();
-  const controls2 = useAnimation();
 
-  const [ref1, inView1] = useInView({
-    threshold: 0.3,
-  });
-
-  const [ref2, inView2] = useInView({
-    threshold: 0.3,
-  });
-
-  useEffect(() => {
-    if (inView1) {
-      controls1.start("visible");
-    }
-    if (inView2) {
-      controls2.start("visible");
-    }
-  }, [ref1, ref2, inView1, inView2]);
+  const projects = [
+    [
+      "pink",
+      "Project #1",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
+      "https://www.google.com/"
+    ],
+    [
+      "green",
+      "Project #2",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
+      "https://www.google.com/"
+    ],
+    [
+      "blue",
+      "Project #3",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
+      "https://www.google.com/"
+    ],
+    [
+      "yellow",
+      "Project #4",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
+      "https://www.google.com/"
+    ],
+    [
+      "red",
+      "Project #5",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
+      "https://www.google.com/"
+    ],
+  ];
 
   return (
     <section className="portofolio">
       <motion.div
         className="section-intro-wrapper"
-        animate={controls1}
         variants={popupVariants}
         initial="hidden"
-        ref={ref1}
+        whileInView={"visible"}
+        viewport={{once : true}}
       >
         <h1 className="section-title">My Work.</h1>
         <hr />
         <p>Just some of the things I built.</p>
       </motion.div>
-      <div className="container">
-        <AnimatePresence mode="wait">
-          <motion.div className="wrapper">
-            
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      <AnimatePresence mode="wait">
+        <div className="container">
+          <motion.div className="wrapper"></motion.div>
+        </div>
+      </AnimatePresence>
     </section>
   );
 }
