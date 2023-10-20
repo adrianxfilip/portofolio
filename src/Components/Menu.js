@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import "../Styles/Menu.scss";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
-function Menu() {
+function Menu({toggleLogo}) {
   const [isMenuOpen, toggleMenu] = useState(false);
 
   const animationDuration = 0.2;
@@ -27,7 +27,7 @@ function Menu() {
       x: "0",
       y: "0",
       rotate: "0deg",
-      borderColor: "white",
+      borderColor: "#fff",
       transition: {
         duration: animationDuration,
       },
@@ -44,7 +44,7 @@ function Menu() {
     },
     closed: {
       rotate: "0deg",
-      borderColor: "white",
+      borderColor: "#fff",
       transition: {
         duration: animationDuration,
       },
@@ -65,7 +65,7 @@ function Menu() {
       x: "0",
       y: "0",
       rotate: "0deg",
-      borderColor: "white",
+      borderColor: "#fff",
       transition: {
         duration: animationDuration,
       },
@@ -110,16 +110,16 @@ function Menu() {
 
   const listVariants = {
     open: {
-      y: "0",
+      y: [30,0],
       opacity: 1,
       transition: {
-        delay: 0.2,
+        delay: .2,
         duration: 0.2,
         type: "easeIn",
       },
     },
     closed: {
-      y: "20px",
+      y: "30px",
       opacity: 0,
       transition: {
         duration: 0,
@@ -129,26 +129,31 @@ function Menu() {
 
   const menuControls = useAnimation();
 
-  useEffect(() => {
-    if (isMenuOpen) {
+  const handleMenu = (openMenu) => {
+    toggleLogo(openMenu)
+    if (openMenu) {
       menuControls.start("open");
+      toggleMenu(!isMenuOpen)
       if(isMobile){
         document.body.style.overflow = "hidden"
       }
     } else {
       menuControls.start("closed");
+      setTimeout(()=>{
+        toggleMenu(!isMenuOpen)
+      }, 200)
       if(document.body.style.overflow == "hidden"){
         document.body.style.overflow = "unset"
       }
     }
-  }, [isMenuOpen, isMobile]);
+  }
 
   return (
     <div className="menu-container">
       <button
         className="menu-button"
         onClick={() => {
-          toggleMenu(!isMenuOpen);
+          handleMenu(!isMenuOpen);
         }}
       >
         <motion.hr
@@ -176,7 +181,7 @@ function Menu() {
       <AnimatePresence mode="wait">
         <motion.nav
           className="menu-wrapper"
-          style={{ zIndex: 4, scale: isMobile ? 1 : "unset" }}
+          style={{ zIndex: 4, scale: isMobile ? 1 : "unset", display: isMenuOpen ? "block" : "none"}}
           variants={menuVariants}
           animate={menuControls}
           initial="closed"

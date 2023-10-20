@@ -5,6 +5,11 @@
     font-size: 1em;
     margin: 3em 0;
     transition: all 0.3s;
+    z-index: 5;
+    position: relative;
+    path{
+      stroke: white;
+    }
   }
 }
 
@@ -22,6 +27,11 @@
     .logo {
       font-size: 12px;
       margin: 2em 0;
+    }
+    .open{
+      path{
+        stroke: #060143
+      }
     }
   }
 }

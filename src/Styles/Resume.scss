@@ -1,5 +1,5 @@
 .resume {
-  margin: 0 0 3em 0;
+  margin: 8em 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,10 +43,6 @@ box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.07),
         0px 4px 23px rgba(3, 7, 18, 0.29),
         0px 7px 35px rgba(3, 7, 18, 0.36),
         0px 10px 51px rgba(3, 7, 18, 0.43);
-      .fi {
-        font-size: 5em;
-        color: white;
-      }
     }
     button:hover {
       transform: translateY(-3px) scale(1.05);
@@ -67,7 +63,7 @@ box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.07),
 
 @media only screen and (max-width: 768px) {
   .resume {
-    margin: 1em 0;
+    margin: 1em 0 3em;
     padding:0 1em;
     .resume-wrapper {
       border-radius: 25px;

@@ -2,15 +2,16 @@ import { motion} from "framer-motion";
 import "../Styles/Header.scss"
 import Menu from "./Menu";
 import Logo from "./Logo"
-import { useState, useEffect } from "react";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useState } from "react";
 
 function Header() {
 
+  const [isMenuOpen, toggleMenu] = useState(false)
+
   return (
    <motion.header className="header">
-      <Logo />
-      <Menu />
+      <Logo isMenuOpen={isMenuOpen} />
+      <Menu toggleLogo={toggleMenu}/>
    </motion.header>
   );
 }
