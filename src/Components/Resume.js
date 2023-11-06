@@ -28,7 +28,7 @@ export default function Resume() {
           <p className="section-title">
             Read my résumé for more in-depth info.
           </p>
-          <button>Résumé</button>
+          <a href={require("../CV-Filip-Adrian-Eng.pdf")} download="CV-Filip-Adrian"><button>Résumé</button></a>
         </motion.div>
       </motion.div>
     </motion.section>

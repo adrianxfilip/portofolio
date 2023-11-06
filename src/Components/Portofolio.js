@@ -1,4 +1,3 @@
-import { hasPointerEvents } from "@testing-library/user-event/dist/utils";
 import "../Styles/Portofolio.scss";
 import {
   useAnimation,
@@ -8,6 +7,11 @@ import {
   useMotionValue,
 } from "framer-motion";
 import { useEffect, useState } from "react";
+import coinflip from "../coinflip.png";
+import getaticket from "../getaticket.png";
+import lovelycats from "../lovelycats.png";
+import codepen from "../Codepen.png";
+import replit from "../Replit.jpg";
 
 export default function Portofolio() {
   const popupVariants = {
@@ -26,39 +30,39 @@ export default function Portofolio() {
 
   const projects = [
     {
-      color: "pink",
-      name: "Project #1",
+      img: coinflip,
+      name: "Coin Flipping Game",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
-      url: "https://www.google.com/",
+        "A casino style coin flipping game developed with the goal of getting experience on working with websockets, namely Socket.IO.",
+      url: "https://adrianxfilip.github.io/coinflip-client/",
     },
     {
-      color: "red",
-      name: "Project #2",
+      img: getaticket,
+      name: "Lottery Website",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
-      url: "https://www.google.com/",
+        "Abandoned projects developed for a friend. Project was ultimatelly not launched, but was a good challenge and opportunity to improve my both frontend and backend development skills.",
+      url: "https://adrianxfilip.github.io/getaticket/",
     },
     {
-      color: "yellow",
-      name: "Project #3",
+      img: lovelycats,
+      name: "LovelyCatsNFT",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
-      url: "https://www.google.com/",
+        "Landing page developed for an NFT collection centered around cats.",
+      url: "https://lovelycatsnft.com/",
     },
     {
-      color: "green",
-      name: "Project #4",
+      img: replit,
+      name: "Replit Projects",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
-      url: "https://www.google.com/",
+        "Various projects required for earning my Backend Development certification from freeCodeCamp.",
+      url: "https://replit.com/@AdrianFilip",
     },
     {
-      color: "blue",
-      name: "Project #5",
+      img: codepen,
+      name: "CodePen Projects",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris consectetur orci elementum eros lobortis egestas.",
-      url: "https://www.google.com/",
+        "Various projects required for earning my Frontend Development certifications from freeCodeCamp.",
+      url: "https://codepen.io/adrianfilip663/pens/public",
     },
   ];
 
@@ -101,15 +105,15 @@ export default function Portofolio() {
   const dragVariants = {
     left: {
       x: [-500, 0],
-      transition : {
-        duration: .4
-      }
+      transition: {
+        duration: 0.4,
+      },
     },
     right: {
       x: [500, 0],
-      transition : {
-        duration: .4
-      }
+      transition: {
+        duration: 0.4,
+      },
     },
   };
 
@@ -147,14 +151,13 @@ export default function Portofolio() {
             }}
             key={currentProject}
           >
-            <div
-              className="img-placeholder"
-              style={{ backgroundColor: projects[currentProject].color }}
-            ></div>
+            <img src={projects[currentProject].img} />
             <div className="project-info">
               <h2>{projects[currentProject].name}</h2>
               <p>{projects[currentProject].description}</p>
-              <a href={projects[currentProject].url}>View Project</a>
+              <a href={projects[currentProject].url} target="_blank">
+                View Project
+              </a>
             </div>
           </motion.div>
           <div className="counter-wrapper">
