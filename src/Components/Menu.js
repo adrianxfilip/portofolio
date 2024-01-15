@@ -193,19 +193,19 @@ function Menu({toggleLogo}) {
             className={isMenuOpen ? "" : "closed-menu"}
           >
             <li>
-              <a href="">
+              <a style={{cursor : "pointer"}} onClick={()=>{document.getElementById("about-me").scrollIntoView({block: "center"})}}>
                 <i className="fi fi-br-following"></i> About Me
               </a>
             </li>
             <li>
-              <a href="">
-                {" "}
-                <i className="fi fi-br-briefcase"></i> My Work
+              <a style={{cursor : "pointer"}} onClick={()=>{document.getElementById("resume").scrollIntoView({block: "center"})}}>
+                <i className="fi fi-br-document"></i> Résumé
               </a>
             </li>
             <li>
-              <a href="">
-                <i className="fi fi-br-document"></i> Résumé
+              <a style={{cursor : "pointer"}} onClick={()=>{document.getElementById("my-work").scrollIntoView({block: "center"})}}>
+                {" "}
+                <i className="fi fi-br-briefcase"></i> My Work
               </a>
             </li>
           </motion.ul>
@@ -222,8 +222,8 @@ function Menu({toggleLogo}) {
               </a>
             </li>
             <li>
-              <a href="https://t.me/adrianfilip" target="_blank">
-                <i className="fi fi-brands-telegram"></i> t.me/adrianfilip
+              <a href="https://wa.me/40757734760" target="_blank">
+                <i className="fi fi-brands-whatsapp"></i> WhatsApp
               </a>
             </li>
           </motion.ul>

@@ -1,5 +1,6 @@
+import { useEffect, useRef } from "react";
 import "../Styles/Resume.scss";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export default function Resume() {
   const popupVariants = {
@@ -11,24 +12,34 @@ export default function Resume() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
+        delay: .3
       },
     },
   };
 
+  const ref = useRef(null);
+  const isInView = useInView(
+    ref,
+    {
+      once : true,
+      amount : 1
+    }
+  );
+
   return (
-    <motion.section className="resume">
+    <motion.section className="resume" id="resume">
       <motion.div className="resume-wrapper">
-        <motion.div
-          variants={popupVariants}
-          initial="hidden"
-          whileInView={"visible"}
-          viewport={{once : true}}
-        >
+        <motion.div ref={ref} variants={popupVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
           <p className="section-title">
             Read my résumé for more in-depth info.
           </p>
-          <a href={require("../CV-Filip-Adrian-Eng.pdf")} download="CV-Filip-Adrian"><button>Résumé</button></a>
+          <a
+            href={require("../CV_Filip_Adrian.pdf")}
+            download="CV-Filip-Adrian"
+          >
+            <button>Résumé</button>
+          </a>
         </motion.div>
       </motion.div>
     </motion.section>

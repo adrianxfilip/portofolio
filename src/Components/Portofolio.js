@@ -5,13 +5,15 @@ import {
   AnimatePresence,
   useTransform,
   useMotionValue,
+  useInView,
 } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import coinflip from "../coinflip.png";
 import getaticket from "../getaticket.png";
 import lovelycats from "../lovelycats.png";
 import codepen from "../Codepen.png";
 import replit from "../Replit.jpg";
+import userEvent from "@testing-library/user-event";
 
 export default function Portofolio() {
   const popupVariants = {
@@ -23,25 +25,26 @@ export default function Portofolio() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
+        delay: .3
       },
     },
   };
 
   const projects = [
     {
+      img: getaticket,
+      name: "Lottery Website",
+      description:
+        "Project developed for a friend. Project was ultimatelly not launched, but was a good challenge and opportunity to improve both my front-end and back-end development skills.",
+      url: "https://adrianxfilip.github.io/getaticket/",
+    },
+    {
       img: coinflip,
       name: "Coin Flipping Game",
       description:
         "A casino style coin flipping game developed with the goal of getting experience on working with websockets, namely Socket.IO.",
       url: "https://adrianxfilip.github.io/coinflip-client/",
-    },
-    {
-      img: getaticket,
-      name: "Lottery Website",
-      description:
-        "Abandoned projects developed for a friend. Project was ultimatelly not launched, but was a good challenge and opportunity to improve my both frontend and backend development skills.",
-      url: "https://adrianxfilip.github.io/getaticket/",
     },
     {
       img: lovelycats,
@@ -54,14 +57,14 @@ export default function Portofolio() {
       img: replit,
       name: "Replit Projects",
       description:
-        "Various projects required for earning my Backend Development certification from freeCodeCamp.",
+        "Various projects required for earning my Back-end Development certification from freeCodeCamp.",
       url: "https://replit.com/@AdrianFilip",
     },
     {
       img: codepen,
       name: "CodePen Projects",
       description:
-        "Various projects required for earning my Frontend Development certifications from freeCodeCamp.",
+        "Various projects required for earning my Front-end Development certifications from freeCodeCamp.",
       url: "https://codepen.io/adrianfilip663/pens/public",
     },
   ];
@@ -112,21 +115,28 @@ export default function Portofolio() {
     right: {
       x: [500, 0],
       transition: {
-        duration: 0.4,
+        duration: 0.4
       },
     },
   };
 
   const dragControls = useAnimation();
 
+  const ref = useRef(null);
+  const isInView = useInView(
+    ref,
+    {
+      once : true,
+      amount : 1
+    }
+  );
+
+
   return (
-    <section className="portofolio">
+    <section className="portofolio" id="my-work">
       <motion.div
         className="section-intro-wrapper"
-        variants={popupVariants}
-        initial="hidden"
-        whileInView={"visible"}
-        viewport={{ once: true }}
+        ref={ref} variants={popupVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}
       >
         <h1 className="section-title">My Work.</h1>
         <hr />

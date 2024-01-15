@@ -1,6 +1,6 @@
 import "../Styles/Footer.scss";
-import telegram from "../telegram.png";
 import linkedin from "../linkedin.png";
+import whatsapp from "../whatsapp.png";
 import gmail from "../gmail.png";
 
 export default function Footer() {
@@ -31,11 +31,8 @@ export default function Footer() {
               <a href="mailto:adrianxfilip@gmail.com">
                 <img src={gmail} />
               </a>
-              <a href="https://t.me/adrianfilip" target="_blank">
-                <img src={telegram} />
-              </a>
-              <a href="" target="blank">
-                <img src={linkedin} />
+              <a href="https://wa.me/40757734760" target="_blank">
+                <img src={whatsapp} />
               </a>
             </div>
           </div>

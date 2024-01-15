@@ -2,7 +2,7 @@
  margin: 8em 0 0 0;
   .container {
     width: 65%;
-    margin: 8em auto;
+    margin: 5em auto;
     padding: 0;
     .wrapper {
       display: flex;
@@ -15,7 +15,7 @@
         width: 100%;
         height: 20em;
         margin: 0 2em 0 0;
-        border-radius: 25px;
+        border-radius: .6em !important;
         box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.07),
           0px 1px 6px rgba(3, 7, 18, 0.14), 0px 3px 13px rgba(3, 7, 18, 0.22),
           0px 4px 23px rgba(3, 7, 18, 0.29), 0px 7px 35px rgba(3, 7, 18, 0.36),
@@ -39,7 +39,7 @@
         font-family: "Gabarito", sans-serif;
       }
       h2 {
-        margin-top: 0;
+        margin: 0;
         font-size: 2em;
       }
       a {
@@ -47,12 +47,12 @@
         border: none;
         background-color: #e7c3ff;
         color: #060143;
-        font-size: 1.4em;
+        font-size: 1.2em;
         padding: 0.5em 1em;
-        border-radius: 25px;
+        border-radius: .6em;
         display: block;
         width: fit-content;
-        margin: 1.5em 0 0 0;
+        margin: 0;
         transition: all;
         transition-duration: 0.2s;
         box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.07),

@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import "../Styles/AboutMe.scss";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export default function AboutMe() {
   const skills = [
@@ -28,20 +29,28 @@ export default function AboutMe() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: .5,
+        duration: .4,
+        delay: .3
       },
     },
   };
 
+  const ref = useRef(null)
+  const isInView = useInView(
+    ref,
+    {
+      once : true,
+      amount : 1
+    }
+  );
 
   return (
-    <section className="about-me">
+    <section className="about-me" id="about-me">
       <motion.div
         className="section-intro-wrapper"
         variants={popupVariants}
         initial="hidden"
-        whileInView={"visible"}
-        viewport={{once : true}}
+        ref={ref} animate={isInView ? "visible" : "hidden"}
       >
         <h1 className="section-title">About me.</h1>
         <hr />
@@ -57,20 +66,17 @@ export default function AboutMe() {
         >
           <h2>Who am I?</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            blandit in tellus vel vulputate. Vivamus vitae molestie ante. Mauris
-            consectetur orci elementum eros lobortis egestas.
+          Hello there! I'm Adrian, a passionate and innovative web developer dedicated to crafting clean and functional websites. 
+          With a strong foundation in both front-end and back-end technologies, I thrive on turning ideas into reality through code.
             <br />
             <br />
-            Nunc eu sapien condimentum, ultricies tellus eu, egestas magna.
-            Suspendisse eget neque pharetra, condimentum odio eu, scelerisque
-            lacus. Donec porttitor euismod mi, at tincidunt turpis lobortis in.
-            Nulla tincidunt sem at eros sagittis sodales
+            I'm fascinated by the endless possibilities that web development offers. 
+            From creating seamless user experiences to solving complex problems through coding, every project is an exciting challenge for me. 
+            I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends and best practices.
             <br />
             <br />
-            Maecenas hendrerit ex ex, at rutrum neque aliquet eu. Fusce eros
-            nisl, malesuada vel risus sit amet, tempus pulvinar elit. Aenean
-            ultricies, nisl et faucibus volutpat, neque turpis consequat eros.
+            I'm always open to new opportunities, collaborations, and interesting projects. 
+            Feel free to <u><a href="mailto:adrianxfilip@gmail.com">reach out</a></u> if you have an exciting idea or if you just want to connect.
           </p>
         </motion.div>
         <motion.div
@@ -78,7 +84,7 @@ export default function AboutMe() {
           variants={popupVariants}
           initial="hidden"
           whileInView={"visible"}
-          viewport={{once : true}}
+          viewport={{once : true, threshold: 1}}
         >
           <h2>My Skills.</h2>
           {skills.map((skill, index) => (
